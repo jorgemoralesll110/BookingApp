@@ -8,6 +8,14 @@ public class Plate {
     }
 
     public boolean isValid() {
-        return number != null && number.matches("\\d{4}[A-Z]{3}");
+        return number != null && number.matches("[A-Z0-9]+"); // Solo letras y números
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 }
