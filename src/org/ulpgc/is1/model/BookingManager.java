@@ -4,61 +4,60 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingManager {
-    private List<Customer> customers;
-    private List<PromotionalCode> promotionalCodes;
-    private List<Vehicle> vehicles;
-    private List<Booking> bookings;
+    private List<Customer> customers = new ArrayList<Customer>();
+    private List<Vehicle> vehicles = new ArrayList<Vehicle>();
+    private List<PromotionalCode> promotionalCodes = new ArrayList<PromotionalCode>();
+    private List<Member> members = new ArrayList<Member>();
+    private List<Booking> bookingList = new ArrayList<Booking>();
 
-    public BookingManager() {
-        this.customers = new ArrayList<>();
-        this.promotionalCodes = new ArrayList<>();
-        this.vehicles = new ArrayList<>();
-        this.bookings = new ArrayList<>();
-    }
 
     public void addCustomer(Customer customer) {
-        customers.add(customer);
-    }
-
-    public Customer getCustomer(int index) {
-        return customers.get(index);
-    }
-
-    public void addMember(Member member) {
-        customers.add(member);
-    }
-
-    public Member getMember(int index) {
-        Customer customer = customers.get(index);
-        if (customer instanceof Member) {
-            return (Member) customer;
+        if (!customers.contains(customer)) {
+            customers.add(customer);
         }
-        return null;
     }
 
     public void addVehicle(Vehicle vehicle) {
-        vehicles.add(vehicle);
+        if (!vehicles.contains(vehicle)) {
+            vehicles.add(vehicle);
+        }
     }
 
-    public Vehicle getVehicle(int index) {
-        return vehicles.get(index);
+    public void addPromotionalCode(PromotionalCode promotionalCode) {
+        if (!promotionalCodes.contains(promotionalCode)) {
+            promotionalCodes.add(promotionalCode);
+        }
     }
 
-    public void addPromotionalCode(PromotionalCode promoCode) {
-        promotionalCodes.add(promoCode);
+    public void addMember(Member member) {
+        if (!members.contains(member)) {
+            members.add(member);
+        }
     }
 
-    public PromotionalCode getPromotionalCode(int index) {
-        return promotionalCodes.get(index);
+    public void Book(Booking booking) {
+        if (!bookingList.contains(booking)) {
+            bookingList.add(booking);
+        }
     }
-    public void book(Customer customer, Vehicle vehicle, PromotionalCode promoCode, Booking booking) {
-        booking.setPromotionalCode(promoCode);
-        bookings.add(booking);
-        customer.addBooking(booking);
-        vehicle.addBooking(booking);
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public List<PromotionalCode> getPromotionalCodes() {
+        return promotionalCodes;
+    }
+
+    public List<Member> getMembers() {
+        return members;
     }
 
     public List<Booking> getBookingList() {
-        return bookings;
+        return bookingList;
     }
 }

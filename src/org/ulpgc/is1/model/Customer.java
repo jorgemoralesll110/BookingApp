@@ -1,25 +1,14 @@
 package org.ulpgc.is1.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
 
 public class Customer {
     private String name;
     private String surname;
-    private ArrayList<Booking> bookings = new ArrayList<Booking>();
 
     public Customer(String name, String surname) {
         this.name = name;
         this.surname = surname;
-    }
-
-    public void addBooking(Booking booking) {
-        bookings.add(booking);
-    }
-
-    public ArrayList<Booking> getBookings() {
-        return bookings;
     }
 
     public String getName() {

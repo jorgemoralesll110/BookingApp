@@ -13,12 +13,12 @@ public class PromotionalCode {
         return id;
     }
 
-    public int getDiscount() {
-        return discount;
-    }
-
     public void setId(String id) {
         this.id = id;
+    }
+
+    public int getDiscount() {
+        return discount;
     }
 
     public void setDiscount(int discount) {

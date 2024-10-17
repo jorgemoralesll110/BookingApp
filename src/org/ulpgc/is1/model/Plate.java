@@ -7,10 +7,6 @@ public class Plate {
         this.number = number;
     }
 
-    public boolean isValid() {
-        return number != null && number.matches("[A-Z0-9]+"); // Solo letras y números
-    }
-
     public String getNumber() {
         return number;
     }
@@ -18,4 +14,10 @@ public class Plate {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    private boolean isValid() {
+        return number != null && number.matches("[0-9]{4}[A-Z]{3}");
+    }
+
+
 }

@@ -1,47 +1,52 @@
 package org.ulpgc.is1.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Booking {
-
     private final int id;
-    private Date date;
-
-    private Location location;
+    private LocalDate date;
+    private Customer customer;
+    private Vehicle vehicle;
     private PromotionalCode promotionalCode;
+    private Location from;
+    private Location to;
 
-    public Booking(int id, Date date, Location location) {
+    public Booking(int id, LocalDate date, Customer customer, Vehicle vehicle, PromotionalCode promotionalCode, Location from, Location to) {
         this.id = id;
         this.date = date;
-        this.location = location;
-    }
-
-    public double price() {
-        double basePrice = 100.0; // Ejemplo de precio base
-        if (promotionalCode != null) {
-            return basePrice - (basePrice * promotionalCode.getDiscount() / 100.0);
-        }
-        return basePrice;
+        this.customer = customer;
+        this.vehicle = vehicle;
+        this.promotionalCode = promotionalCode;
+        this.from = from;
+        this.to = to;
     }
 
     public int getId() {
         return id;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public Location getLocation() {
-        return location;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public PromotionalCode getPromotionalCode() {
@@ -51,4 +56,29 @@ public class Booking {
     public void setPromotionalCode(PromotionalCode promotionalCode) {
         this.promotionalCode = promotionalCode;
     }
+
+    public Location getFrom() {
+        return from;
+    }
+
+    public void setFrom(Location from) {
+        this.from = from;
+    }
+
+    public Location getTo() {
+        return to;
+    }
+
+    public void setTo(Location to) {
+        this.to = to;
+    }
+
+    public int price() {
+        int finalPrice = vehicle.getPrice();
+        if (promotionalCode != null) {
+            finalPrice -= (finalPrice * promotionalCode.getDiscount()) / 100;
+        }
+        return finalPrice;
+    };
+
 }

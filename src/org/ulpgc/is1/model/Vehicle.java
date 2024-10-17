@@ -1,35 +1,20 @@
 package org.ulpgc.is1.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Vehicle {
     private final int license;
     private String brand;
     private String model;
     private int price;
-
+    private VehicleType type;
     private Plate plate;
-    private VehicleType vehicleType;
-    private List<Booking> bookings;
 
-
-    public Vehicle(int license, String brand, String model, int price, Plate plate, VehicleType vehicleType) {
+    public Vehicle(int license, String brand, String model, int price, VehicleType type, Plate plate) {
         this.license = license;
         this.brand = brand;
         this.model = model;
         this.price = price;
+        this.type = type;
         this.plate = plate;
-        this.vehicleType = vehicleType;
-        this.bookings = new ArrayList<>();
-    }
-
-    public void addBooking(Booking booking) {
-        bookings.add(booking);
-    }
-
-    public List<Booking> getBookings() {
-        return bookings;
     }
 
     public int getLicense() {
@@ -60,19 +45,19 @@ public class Vehicle {
         this.price = price;
     }
 
+    public VehicleType getType() {
+        return type;
+    }
+
+    public void setType(VehicleType type) {
+        this.type = type;
+    }
+
     public Plate getPlate() {
         return plate;
     }
 
     public void setPlate(Plate plate) {
         this.plate = plate;
-    }
-
-    public VehicleType getVehicleType() {
-        return vehicleType;
-    }
-
-    public void setVehicleType(VehicleType vehicleType) {
-        this.vehicleType = vehicleType;
     }
 }
