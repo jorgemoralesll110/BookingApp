@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingManager {
-    private List<Customer> customers = new ArrayList<Customer>();
-    private List<Vehicle> vehicles = new ArrayList<Vehicle>();
-    private List<PromotionalCode> promotionalCodes = new ArrayList<PromotionalCode>();
-    private List<Member> members = new ArrayList<Member>();
-    private List<Booking> bookingList = new ArrayList<Booking>();
+    private List<Customer> customers = new ArrayList<>();
+    private List<Vehicle> vehicles = new ArrayList<>();
+    private List<PromotionalCode> promotionalCodes = new ArrayList<>();
+    private List<Member> members = new ArrayList<>();
+    private List<Booking> bookingList = new ArrayList<>();
 
 
     public void addCustomer(Customer customer) {
@@ -39,22 +39,6 @@ public class BookingManager {
         if (!bookingList.contains(booking)) {
             bookingList.add(booking);
         }
-    }
-
-    public List<Customer> getCustomers() {
-        return customers;
-    }
-
-    public List<Vehicle> getVehicles() {
-        return vehicles;
-    }
-
-    public List<PromotionalCode> getPromotionalCodes() {
-        return promotionalCodes;
-    }
-
-    public List<Member> getMembers() {
-        return members;
     }
 
     public List<Booking> getBookingList() {

@@ -79,6 +79,6 @@ public class Booking {
             finalPrice -= (finalPrice * promotionalCode.getDiscount()) / 100;
         }
         return finalPrice;
-    };
+    }
 
 }

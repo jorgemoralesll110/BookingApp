@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Main {
-    private static Object bookings;
 
     public static void main(String[] args) {
 

@@ -1,6 +1,5 @@
 package org.ulpgc.is1.model;
 
-import java.time.LocalDate;
 
 public class Customer {
     private String name;
