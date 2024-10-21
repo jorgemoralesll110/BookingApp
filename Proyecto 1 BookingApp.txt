@@ -1,0 +1,9 @@
+GRUPO 32
+Jorge Morales Llerandi
+Raquel Almeida Quesada
+Giovanni José Santana Bolaños
+
+Enlace al GitHub (El proyecto se encuentra en la rama master)
+https://github.com/jorgemoralesll110/BookingApp.git
+
+
