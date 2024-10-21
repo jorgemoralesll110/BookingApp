@@ -44,5 +44,3 @@ Este paquete contiene todas las clases que modelan el dominio del problema, tale
 
 4. La información de las reservas, incluyendo detalles de clientes, vehículos, y localizaciones, se puede mostrar de manera clara en la salida de la aplicación.
 
-**Anotación**
-Todos los getter y setter que no se usaban se han eliminado a modo de tener un código más limpio.
